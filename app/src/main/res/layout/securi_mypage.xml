@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:src="@mipmap/mypage_profile"
+        android:layout_gravity="center"/>
+    <TextView
+    android:id="@+id/myId"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="hanazzing"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    android:gravity="center"/>
+    <TextView
+        android:id="@+id/myEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hanazzing@naver.com"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/border">
+        <Button
+            android:id="@+id/serverInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서버 및 기기 연결 정보"
+            android:textSize="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:textStyle="bold"
+            android:background="#ffffff"/>
+
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:src="@mipmap/mypage_connect"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/border">
+        <Button
+            android:id="@+id/dataInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="데이터 저장 및 관리"
+            android:textSize="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="55dp"
+            android:textStyle="bold"
+            android:background="#ffffff"/>
+
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:src="@mipmap/mypage_data" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/border">
+        <Button
+            android:id="@+id/notiInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="알림사항 및 문의"
+            android:textSize="23dp"
+            android:background="#ffffff"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="83dp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:src="@mipmap/mypage_question"/>
+    </LinearLayout>
+
+</LinearLayout>
