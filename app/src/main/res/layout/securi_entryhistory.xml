@@ -1,65 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="문열림 기록"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="#308FFB"/>
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".securi_entryhistory">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="문열림 기록"
+                android:textColor="#308FFB"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
-        <NumberPicker
-            android:id="@+id/picker_year"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            >
-        </NumberPicker>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
-        <NumberPicker
-            android:id="@+id/picker_month"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_margin="10dp">
-        </NumberPicker>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="298dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#308FFB"/>
+                <NumberPicker
+                    android:id="@+id/picker_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"></NumberPicker>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Info"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="#308FFB"/>
-    </LinearLayout>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listview"/>
-    </LinearLayout>
+                <NumberPicker
+                    android:id="@+id/picker_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"></NumberPicker>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="298dp"
+                    android:text="Date"
+                    android:textColor="#308FFB"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Info"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="#308FFB" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

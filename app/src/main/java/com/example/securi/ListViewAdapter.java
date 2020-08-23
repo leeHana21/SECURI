@@ -11,51 +11,62 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ListViewAdapter extends BaseAdapter {
-    private ImageView iconImageView;
-    private TextView titleTextView;
-    private TextView contentTextView;
-
+    // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>();
 
-    public ListViewAdapter(){
+    // ListViewAdapter의 생성자
+    public ListViewAdapter() {
 
     }
-    public int getCount(){
+
+    // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
+    @Override
+    public int getCount() {
         return listViewItemList.size();
     }
-    public View getView(int position, View convertView, ViewGroup parent){
+
+    // position에 위치한 데이터를 화면에 출력하는데 사용될 View를 리턴. : 필수 구현
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
         final int pos = position;
         final Context context = parent.getContext();
 
-        if(convertView == null){
-            LayoutInflater inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.securi_entryhistory_listview,parent,false);
+        // "listview_item" Layout을 inflate하여 convertView 참조 획득.
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.securi_entryhistory_listview, parent, false);
         }
-
-        //아이디 수정 필요
-        titleTextView = (TextView) convertView.findViewById(R.id.title);
-        iconImageView = (ImageView) convertView.findViewById(R.id.icon);
-        contentTextView = (TextView) convertView.findViewById(R.id.content);
+        TextView date = (TextView) convertView.findViewById(R.id.date);
+        TextView title = (TextView) convertView.findViewById(R.id.title);
+        TextView content = (TextView) convertView.findViewById(R.id.content);
+        ImageView entryData = (ImageView) convertView.findViewById(R.id.entryData);
 
         ListViewItem listViewItem = listViewItemList.get(position);
-        //
-        titleTextView.setText(listViewItem.getTitle());
-        iconImageView.setImageResource(listViewItem.getIcon());
-        contentTextView.setText(listViewItem.getContent());
-    return convertView;
-    }
-    public long getItemId(int position){
-        return position;
-    }
-    public Object getItem(int position){
-        return listViewItemList.get(position);
+        date.setText(listViewItem.getDate());
+        title.setText(listViewItem.getTitle());
+        content.setText(listViewItem.getContent());
+        entryData.setImageResource(listViewItem.getEntryData());
+
+        return convertView;
     }
 
-    public void addItem(String title, int icon, String content){
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
+    @Override
+    public Object getItem(int position) {
+        return listViewItemList.get(position);
+    }
+    public void addItem(String date, String title, String content, int entryData) {
         ListViewItem item = new ListViewItem();
+
+        item.setDate(date);
         item.setTitle(title);
-        item.setIcon(icon);
         item.setContent(content);
+        item.setEntryData(entryData);
 
         listViewItemList.add(item);
     }

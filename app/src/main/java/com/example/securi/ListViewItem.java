@@ -1,24 +1,25 @@
 package com.example.securi;
 
 public class ListViewItem {
-    private int icon;
-    private String content;
+    private int entryData;
+    private String date;
     private String title;
+    private String content;
 
-    public int getIcon() {
-        return icon;
+    public int getEntryData() {
+        return entryData;
     }
 
-    public void setIcon(int icon) {
-        this.icon = icon;
+    public void setEntryData(int entryData) {
+        this.entryData = entryData;
     }
 
-    public String getContent() {
-        return content;
+    public String getDate() {
+        return date;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTitle() {
@@ -27,5 +28,13 @@ public class ListViewItem {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

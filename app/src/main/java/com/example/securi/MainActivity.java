@@ -60,26 +60,26 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.connect: {
-                        manager.beginTransaction().replace(R.id.frame_layout, new Menu1Fragment()).commit();
+                        manager.beginTransaction().replace(R.id.frame_layout,menu1Fragment).commit();
                         break;
                     }
                     case R.id.autoOpen: {
-                        manager.beginTransaction().replace(R.id.frame_layout, new Menu2Fragment()).commit();
+                        manager.beginTransaction().replace(R.id.frame_layout, menu2Fragment).commit();
                         //transaction.replace(R.id.frame_layout, menu2Fragment).commitAllowingStateLoss();
                         break;
                     }
                     case R.id.home: {
-                        manager.beginTransaction().replace(R.id.frame_layout, new Menu3Fragment()).commit();
+                        manager.beginTransaction().replace(R.id.frame_layout, menu3Fragment).commit();
                         //transaction.add(R.id.frame_layout, menu3Fragment).commitAllowingStateLoss();
                         break;
                     }
                     case R.id.history: {
-                        manager.beginTransaction().replace(R.id.frame_layout, new Menu4Fragment()).commit();
+                        manager.beginTransaction().replace(R.id.frame_layout, menu4Fragment).commit();
                         //transaction.replace(R.id.frame_layout, menu4Fragment).commitAllowingStateLoss();
                         break;
                     }
                     case R.id.myPage: {
-                        manager.beginTransaction().replace(R.id.frame_layout, new Menu5Fragment()).commit();
+                        manager.beginTransaction().replace(R.id.frame_layout, menu5Fragment).commit();
                         //transaction.replace(R.id.frame_layout, menu5Fragment).commitAllowingStateLoss();
                         break;
                     }
