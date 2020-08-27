@@ -1,6 +1,9 @@
 package com.example.securi;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,59 +11,39 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class ListViewAdapter_datainfo extends BaseAdapter {
-    // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
-    private ArrayList<ListViewItem_datainfo> listViewItemList = new ArrayList<ListViewItem_datainfo>();
+    Context context;
+    ArrayList<ListViewItem_datainfo> list;
+    LayoutInflater inflater;
+    AlertDialog dialog;
 
-    // ListViewAdapter의 생성자
-    public ListViewAdapter_datainfo() {
 
+
+    public ListViewAdapter_datainfo(Context context, ArrayList<ListViewItem_datainfo> list){
+        this.context = context;
+        this.list = list;
+        this.inflater = (LayoutInflater)context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+    }
+    public void addDTO(ListViewItem_datainfo dto) {
+        list.add(dto);
     }
 
-    // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
+    //리스트의 항목을 삭제할 메서드 작성
+    public void delDTO(int position) {
+        list.remove(position);
+    }
     @Override
     public int getCount() {
-        return listViewItemList.size();
+        return list.size();
     }
 
-    // position에 위치한 데이터를 화면에 출력하는데 사용될 View를 리턴. : 필수 구현
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
-        final Context context = parent.getContext();
-
-        // "listview_item" Layout을 inflate하여 convertView 참조 획득.
-        if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.securi_datainfo_listview, parent, false);
-        }
-        TextView dataTitle = (TextView) convertView.findViewById(R.id.dataTitle);
-        TextView dataDate = (TextView) convertView.findViewById(R.id.dataDate);
-        Button btnDel = (Button) convertView.findViewById(R.id.btnDel);
-        Button btnDown = (Button) convertView.findViewById(R.id.btnDown);
-        ImageView dataInfoImg  = (ImageView) convertView.findViewById(R.id.dataInfoImg);
-
-        ListViewItem_datainfo listViewItem = listViewItemList.get(position);
-        dataDate.setText(listViewItem.getDataDate());
-        dataTitle.setText(listViewItem.getDataTitle());
-        dataInfoImg.setImageResource(listViewItem.getDataInfoImg());
-
-        btnDel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //파이어베이스에서 데이터 삭제하는 코딩
-            }
-        });
-        btnDown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //파이어베이스에서 이미지 다운 받는 코딩
-            }
-        });
-        return convertView;
+    public Object getItem(int position) {
+        return list.get(position);
     }
 
     @Override
@@ -68,18 +51,66 @@ public class ListViewAdapter_datainfo extends BaseAdapter {
         return position;
     }
 
-    // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
     @Override
-    public Object getItem(int position) {
-        return listViewItemList.get(position);
-    }
-    public void addItem_dataInfo(String dataTitle, String dataDate, int dataInfoImg) {
-        ListViewItem_datainfo data_item = new ListViewItem_datainfo();
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        InfoViewHolder viewHolder;
+        if(convertView ==null){
+            convertView = inflater.inflate(R.layout.securi_datainfo_listview,parent,false);
+            viewHolder = new InfoViewHolder();
+            viewHolder.date = convertView.findViewById(R.id.dataDate);
+            viewHolder.image = convertView.findViewById(R.id.dataInfoImg);
 
-        data_item.setDataDate(dataDate);
-        data_item.setDataTitle(dataTitle);
-        data_item.setDataInfoImg(dataInfoImg);
+            convertView.setTag(viewHolder);
+        }else {
+            viewHolder = (InfoViewHolder) convertView.getTag();
+        }
+        ListViewItem_datainfo dto = list.get(position);
+        String date = dto.getDataDate();
+        int resId = dto.getDataInfoImg();
 
-        listViewItemList.add(data_item);
+        viewHolder.date.setText(date);
+        viewHolder.image.setImageResource(resId);
+
+        viewHolder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "선택 : "+position+",날짜 : "+list.get(position).getDataDate(), Toast.LENGTH_SHORT).show();
+                popupXml(list.get(position).getDataInfoImg(),list.get(position).getDataDate());
+            }
+        });
+        return convertView;
     }
+    public class InfoViewHolder{
+        public ImageView image;
+        public TextView date;
+    }
+    public void popupXml(int resId, String date){
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.securi_datainfo_dialog,null);
+        ImageView imageView = view.findViewById(R.id.imageView);
+        TextView textView = view.findViewById(R.id.textView);
+
+        imageView.setImageResource(resId);
+        textView.setText(date);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("상세보기").setView(view);
+        builder.setNegativeButton("종료", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(dialog!=null){
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.setPositiveButton("다운", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (dialog!=null){
+                    dialog.dismiss();
+                }
+            }
+        });
+    }
+
 }

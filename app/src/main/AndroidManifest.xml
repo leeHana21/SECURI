@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".securi_notiinfo"></activity>
+        <activity android:name=".securi_notiinfo" />
         <activity android:name=".securi_datainfo" />
         <activity android:name=".securi_serverinfo" />
         <activity android:name=".securi_addnfc" />

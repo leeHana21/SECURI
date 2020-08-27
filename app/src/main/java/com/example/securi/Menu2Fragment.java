@@ -25,7 +25,7 @@ public class Menu2Fragment extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.checkHistory:
-                Intent intent = new Intent(getActivity(),securi_entryhistory.class);
+                Intent intent = new Intent(getActivity(),securi_datainfo.class);
                 startActivity(intent);
                 break;
         }

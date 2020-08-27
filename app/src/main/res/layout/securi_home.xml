@@ -172,6 +172,7 @@
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             android:text="실시간 외부 상황\n스트리밍"
             android:textSize="20dp"
             android:layout_margin="5dp"
@@ -199,6 +200,7 @@
                 android:layout_height="110dp"
                 android:layout_weight="1"
                 android:text="출입문\n원격 조정"
+                android:background="@color/colorPrimary"
                 android:textSize="20dp"
                 android:layout_margin="5dp" />
         </LinearLayout>

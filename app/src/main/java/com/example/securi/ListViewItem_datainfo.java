@@ -1,10 +1,16 @@
 package com.example.securi;
 
 public class ListViewItem_datainfo {
-    private String dataTitle;
-    private String dataDate;
-    private int dataInfoImg;
+    String dataTitle;
+    String dataDate;
+    int dataInfoImg;
 
+    public ListViewItem_datainfo(){}
+    public ListViewItem_datainfo(String dataTitle, String dataDate, int dataInfoImg){
+        this.dataTitle = dataTitle;
+        this.dataDate = dataDate;
+        this.dataInfoImg = dataInfoImg;
+    }
     public String getDataTitle() {
         return dataTitle;
     }
@@ -28,4 +34,5 @@ public class ListViewItem_datainfo {
     public void setDataInfoImg(int dataInfoImg) {
         this.dataInfoImg = dataInfoImg;
     }
+
 }

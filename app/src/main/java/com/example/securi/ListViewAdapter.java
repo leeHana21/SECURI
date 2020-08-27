@@ -8,6 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class ListViewAdapter extends BaseAdapter {
@@ -60,6 +66,7 @@ public class ListViewAdapter extends BaseAdapter {
     public Object getItem(int position) {
         return listViewItemList.get(position);
     }
+
     public void addItem(String date, String title, String content, int entryData) {
         ListViewItem item = new ListViewItem();
 
@@ -70,4 +77,24 @@ public class ListViewAdapter extends BaseAdapter {
 
         listViewItemList.add(item);
     }
+
+    // sorting test -> db 구성 후 진행 가능
+    ValueEventListener postListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            ArrayList arrayData = new ArrayList();
+            ArrayList arrayIndex = new ArrayList();
+            arrayData.clear();
+            arrayIndex.clear();
+            for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                String key = postSnapshot.getKey();
+
+            }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        }
+    };
 }
