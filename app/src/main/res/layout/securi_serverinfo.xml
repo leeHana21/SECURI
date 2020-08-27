@@ -20,15 +20,7 @@
         android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="연결된 서버 : apatche tomcat"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:gravity="center"/>
-    <TextView
-        android:layout_marginBottom="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="하드웨어 : arduino UNO"
+        android:text="HW : arduino UNO"
         android:textSize="30dp"
         android:textStyle="bold"
         android:gravity="center"/>
@@ -36,7 +28,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="호스팅 : www.dothome.co.kr"
+        android:text="DB : firebase"
         android:textSize="30dp"
         android:textStyle="bold"
         android:gravity="center"/>

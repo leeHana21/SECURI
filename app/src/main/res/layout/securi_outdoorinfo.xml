@@ -26,29 +26,7 @@
         android:layout_marginBottom="10dp"/>
     <WebView
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="540dp"
         android:id="@+id/web"
         android:layout_marginBottom="10dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="추가등록"
-            android:layout_weight="1"
-            android:background="#308FFB"
-            android:textColor="#ffffff"
-            android:layout_marginRight="5dp"
-            android:textStyle="bold"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="등록해지"
-            android:layout_weight="1"
-            android:background="#308FFB"
-            android:textColor="#ffffff"
-            android:textStyle="bold" />
-    </LinearLayout>
 </LinearLayout>
