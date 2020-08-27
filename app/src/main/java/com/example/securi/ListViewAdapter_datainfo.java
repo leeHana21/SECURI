@@ -3,7 +3,9 @@ package com.example.securi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.media.Image;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,6 +71,7 @@ public class ListViewAdapter_datainfo extends BaseAdapter {
         int resId = dto.getDataInfoImg();
 
         viewHolder.date.setText(date);
+        viewHolder.date.setGravity(Gravity.CENTER_HORIZONTAL);
         viewHolder.image.setImageResource(resId);
 
         viewHolder.image.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +114,14 @@ public class ListViewAdapter_datainfo extends BaseAdapter {
                 }
             }
         });
+        dialog = builder.create();
+        dialog.setOnShowListener( new DialogInterface.OnShowListener() {
+            @Override public void onShow(DialogInterface arg0) {
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+            }
+        });
+        dialog.show();
     }
 
 }

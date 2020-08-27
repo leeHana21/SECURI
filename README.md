@@ -10,11 +10,11 @@
 ### 20200823 진행상황까지 업로드
 #### second upload(ListView contents)
 ##### datainfo listview 구현 (0)
-##### entryhistory, datainfo 데이터 보여줄 dialog 구현(△)
+##### datainfo 데이터 보여줄 dialog 구현(O)
 
 
 ### 20200827 진행상황까지 업로드
 #### 리스트뷰 아이템 클릭시 강종 오류 수정(O)
 #### xml 내 불필요 컨텐츠 수정(O)
-#### entryhistory, datainfo 데이터 보여줄 dialog 구현(△)
+#### 로그인 후 프레그먼트 변경사항 유지 구현(△)
 
