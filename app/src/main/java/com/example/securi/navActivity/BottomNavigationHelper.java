@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.navActivity;
 
 import android.annotation.SuppressLint;
 import android.util.Log;

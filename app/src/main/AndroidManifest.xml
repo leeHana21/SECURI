@@ -17,23 +17,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".securi_notiinfo" />
-        <activity android:name=".securi_datainfo" />
-        <activity android:name=".securi_serverinfo" />
-        <activity android:name=".securi_addnfc" />
-        <activity android:name=".securi_autoopen" />
-        <activity android:name=".securi_entryhistory" />
-        <activity android:name=".securi_home" />
-        <activity android:name=".securi_join" />
-        <activity android:name=".securi_login" />
-        <activity android:name=".securi_mypage" />
-        <activity android:name=".securi_outdoorinfo" />
-        <activity android:name=".securi_popup" />
-        <activity android:name=".securi_sensor" />
+        <activity android:name=".additionalActivity.securi_notiinfo" />
+        <activity android:name=".listView.securi_datainfo" />
+        <activity android:name=".additionalActivity.securi_serverinfo" />
+        <activity android:name=".additionalActivity.securi_addnfc" />
+        <activity android:name=".navActivity.securi_autoopen" />
+        <activity android:name=".navActivity.securi_entryhistory" />
+        <activity android:name=".navActivity.securi_home" />
+        <activity android:name=".register.securi_join" />
+        <activity android:name=".register.securi_login" />
+        <activity android:name=".navActivity.securi_mypage" />
+        <activity android:name=".additionalActivity.securi_outdoorinfo" />
+        <activity android:name=".additionalActivity.securi_popup" />
+        <activity android:name=".navActivity.securi_sensor" />
         <activity
-            android:name=".LoadingActivity"
+            android:name=".additionalActivity.LoadingActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".navActivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

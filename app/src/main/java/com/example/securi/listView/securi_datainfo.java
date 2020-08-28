@@ -1,13 +1,13 @@
-package com.example.securi;
+package com.example.securi.listView;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.securi.R;
 
 import java.util.ArrayList;
 

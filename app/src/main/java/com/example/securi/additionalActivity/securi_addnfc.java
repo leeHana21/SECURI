@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.additionalActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.securi.R;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.securi.R;
+import com.example.securi.listView.securi_datainfo;
+import com.example.securi.additionalActivity.securi_notiinfo;
+import com.example.securi.additionalActivity.securi_serverinfo;
 
 public class Menu5Fragment  extends Fragment implements View.OnClickListener {
 
@@ -28,15 +33,15 @@ public class Menu5Fragment  extends Fragment implements View.OnClickListener {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.serverInfo:
-                Intent intent = new Intent(getActivity(),securi_serverinfo.class);
+                Intent intent = new Intent(getActivity(), securi_serverinfo.class);
                 startActivity(intent);
                 break;
             case R.id.dataInfo:
-                Intent intent2 = new Intent(getActivity(),securi_datainfo.class);
+                Intent intent2 = new Intent(getActivity(), securi_datainfo.class);
                 startActivity(intent2);
                 break;
             case R.id.notiInfo:
-                Intent intent3 = new Intent(getActivity(),securi_notiinfo.class);
+                Intent intent3 = new Intent(getActivity(), securi_notiinfo.class);
                 startActivity(intent3);
                 break;
         }

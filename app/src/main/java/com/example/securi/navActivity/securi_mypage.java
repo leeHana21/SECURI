@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.navActivity;
 
 
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.securi.R;
 
 public class securi_mypage extends AppCompatActivity {
     Button serverInfo, dataInfo, notiInfo;

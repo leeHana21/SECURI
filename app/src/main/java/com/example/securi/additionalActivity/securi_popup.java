@@ -1,9 +1,11 @@
-package com.example.securi;
+package com.example.securi.additionalActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Window;
+
+import com.example.securi.R;
 
 public class securi_popup extends AppCompatActivity {
 

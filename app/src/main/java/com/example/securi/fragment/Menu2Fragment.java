@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.securi.R;
+import com.example.securi.listView.securi_datainfo;
 
 public class Menu2Fragment extends Fragment implements View.OnClickListener{
 
@@ -25,7 +27,7 @@ public class Menu2Fragment extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.checkHistory:
-                Intent intent = new Intent(getActivity(),securi_datainfo.class);
+                Intent intent = new Intent(getActivity(), securi_datainfo.class);
                 startActivity(intent);
                 break;
         }

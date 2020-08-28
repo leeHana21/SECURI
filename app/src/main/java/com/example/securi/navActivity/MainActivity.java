@@ -1,21 +1,22 @@
-package com.example.securi;
+package com.example.securi.navActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
+import com.example.securi.additionalActivity.LoadingActivity;
+import com.example.securi.R;
+import com.example.securi.fragment.Menu1Fragment;
+import com.example.securi.fragment.Menu2Fragment;
+import com.example.securi.fragment.Menu3Fragment;
+import com.example.securi.fragment.Menu4Fragment;
+import com.example.securi.fragment.Menu5Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

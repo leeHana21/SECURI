@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".securi_addnfc">
+    tools:context=".additionalActivity.securi_addnfc">
 
     <TextView
         android:layout_width="match_parent"

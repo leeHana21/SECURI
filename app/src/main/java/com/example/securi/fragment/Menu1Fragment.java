@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.securi.R;
+import com.example.securi.additionalActivity.securi_addnfc;
 
 public class Menu1Fragment extends Fragment implements View.OnClickListener {
 
@@ -32,7 +35,7 @@ public class Menu1Fragment extends Fragment implements View.OnClickListener {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.addNfc:
-                Intent intent = new Intent(getActivity(),securi_addnfc.class);
+                Intent intent = new Intent(getActivity(), securi_addnfc.class);
                 startActivity(intent);
                 break;
         }

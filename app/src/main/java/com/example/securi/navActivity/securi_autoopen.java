@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.navActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.securi.R;
+import com.example.securi.listView.securi_datainfo;
 
 
 public class securi_autoopen extends Activity {
@@ -35,7 +38,7 @@ public class securi_autoopen extends Activity {
         checkHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),securi_entryhistory.class);
+                Intent intent = new Intent(getApplicationContext(), securi_datainfo.class);
                 startActivity(intent);
             }
         });

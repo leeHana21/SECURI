@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.listView;
 
 public class ListViewItem {
     private int entryData;

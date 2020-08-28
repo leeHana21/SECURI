@@ -1,6 +1,5 @@
-package com.example.securi;
+package com.example.securi.register;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -14,16 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
+import com.example.securi.navActivity.MainActivity;
+import com.example.securi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.regex.Pattern;
 
@@ -97,7 +92,7 @@ private static final Pattern PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9!@.#
                 if (task.isSuccessful()) {
                     // 로그인 성공
                     Toast.makeText(securi_login.this, R.string.success_login, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(securi_login.this,MainActivity.class);
+                    Intent intent = new Intent(securi_login.this, MainActivity.class);
                     startActivity(intent);
                 } else {
                     // 로그인 실패

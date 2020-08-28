@@ -1,4 +1,4 @@
-package com.example.securi;
+package com.example.securi.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.securi.R;
+import com.example.securi.navActivity.securi_autoopen;
+import com.example.securi.register.securi_login;
+import com.example.securi.additionalActivity.securi_outdoorinfo;
 
 public class Menu3Fragment extends Fragment implements View.OnClickListener {
 TextView joinState;
@@ -38,17 +43,17 @@ Button outInfo, autoOpen, btnlogin;
     public void onClick(View view){
         switch (view.getId()){
             case R.id.outInfo:
-                Intent intent = new Intent(getActivity(),securi_outdoorinfo.class);
+                Intent intent = new Intent(getActivity(), securi_outdoorinfo.class);
                 startActivity(intent);
                 break;
             case R.id.autoOpen:
-                Intent intent2 = new Intent(getActivity(),securi_autoopen.class);
+                Intent intent2 = new Intent(getActivity(), securi_autoopen.class);
                 startActivity(intent2);
                 break;
             case R.id.btnlogin:
                 btnlogin.setVisibility(View.GONE);
                 joinState.setVisibility(View.VISIBLE);
-                Intent intent3 = new Intent(getActivity(),securi_login.class);
+                Intent intent3 = new Intent(getActivity(), securi_login.class);
                 startActivity(intent3);
 
                 break;

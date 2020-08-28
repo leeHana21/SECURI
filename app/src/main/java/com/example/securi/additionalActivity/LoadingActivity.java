@@ -1,8 +1,10 @@
-package com.example.securi;
+package com.example.securi.additionalActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.securi.R;
 
 public class LoadingActivity extends Activity {
     @Override

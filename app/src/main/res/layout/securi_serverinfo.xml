@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".securi_serverinfo">
+    tools:context=".additionalActivity.securi_serverinfo">
 
     <TextView
         android:layout_marginBottom="20dp"

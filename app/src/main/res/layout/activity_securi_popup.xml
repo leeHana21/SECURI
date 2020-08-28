@@ -6,7 +6,7 @@
     android:layout_height="160dp"
     android:orientation="vertical"
     android:background="@drawable/popup_border"
-    tools:context=".securi_popup"
+    tools:context=".additionalActivity.securi_popup"
     android:layout_gravity="center">
     <TextView
         android:layout_width="match_parent"
