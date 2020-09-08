@@ -78,24 +78,4 @@ public class ListViewAdapter extends BaseAdapter {
 
         listViewItemList.add(item);
     }
-
-    // sorting test -> db 구성 후 진행 가능
-    ValueEventListener postListener = new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            ArrayList arrayData = new ArrayList();
-            ArrayList arrayIndex = new ArrayList();
-            arrayData.clear();
-            arrayIndex.clear();
-            for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                String key = postSnapshot.getKey();
-
-            }
-        }
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-        }
-    };
 }

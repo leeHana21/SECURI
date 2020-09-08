@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.example.securi.listView.ListViewAdapter;
 import com.example.securi.R;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Menu4Fragment extends ListFragment{
 ListViewAdapter adapter;
@@ -24,9 +25,9 @@ ListViewAdapter adapter;
         setListAdapter(adapter);
 
         //추후 파이어베이스에서 가져올 수 있게 구현해야함
-        adapter.addItem("08/20","출입","17시 20분 33초", R.mipmap.camera);
-        adapter.addItem("08/20","외출","17시 20분 50초",R.mipmap.camera);
-        adapter.addItem("08/20","출입","17시 20분 33초",R.mipmap.camera);
+        //adapter.addItem("08/20","출입","17시 20분 33초", R.mipmap.camera);
+        //adapter.addItem("08/20","외출","17시 20분 50초",R.mipmap.camera);
+        //adapter.addItem("08/20","출입","17시 20분 33초",R.mipmap.camera);
         //View view = inflater.inflate(R.layout.securi_entryhistory, container, false);
 
         return super.onCreateView(inflater, container, savedInstanceState);
