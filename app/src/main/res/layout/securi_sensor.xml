@@ -2,18 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="10dp">
-
+    android:background="#ECEBEB"
+    android:padding="15dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="My NFC"
         android:textSize="30dp"
         android:textStyle="bold" />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_marginBottom="15dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,13 +29,14 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/border"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <ImageView
-            android:layout_width="110dp"
-            android:layout_height="118dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginRight="20dp"
             android:padding="5dp"
             android:src="@mipmap/nfc" />
 
@@ -93,57 +102,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/addNfc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="#308FFB"
+            android:background="@color/colorS"
             android:text="추가등록"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/delNfc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="#308FFB"
+            android:layout_marginLeft="5dp"
+            android:textSize="20dp"
+            android:background="@color/colorS"
             android:text="등록해지"
             android:textColor="#ffffff"
             android:textStyle="bold" />
     </LinearLayout>
-
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1">
     <TextView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
         android:text="Sensor Control"
         android:textSize="30dp"
+        android:layout_marginBottom="10dp"
         android:textStyle="bold" />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_marginBottom="15dp"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/conSensor_extend"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:gravity="center"
+            android:layout_marginRight="5dp"
             android:orientation="vertical"
             android:padding="20dp">
 
             <ImageView
-                android:layout_width="108dp"
-                android:layout_height="108dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="10dp"
                 android:src="@mipmap/doorsensor" />
 
@@ -152,22 +176,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="도어 센서"
-                android:textSize="25dp"
+                android:padding="5dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp"/>
 
-            <Button
+            <TextView
                 android:id="@+id/conSensor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/popup_border"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="끄 기"
-                android:textColor="@color/colorAccent" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/conCam_extend"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:background="@drawable/border"
@@ -176,8 +204,8 @@
             android:padding="20dp">
 
             <ImageView
-                android:layout_width="108dp"
-                android:layout_height="108dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="10dp"
                 android:src="@mipmap/camera" />
 
@@ -185,18 +213,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
                 android:text="카 메 라"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-            <Button
+            <TextView
                 android:id="@+id/conCam"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/popup_border"
                 android:text="끄 기"
-                android:textColor="@color/colorAccent" />
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+</LinearLayout>
 </LinearLayout>

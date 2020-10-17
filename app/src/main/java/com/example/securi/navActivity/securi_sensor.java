@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -11,8 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.securi.R;
 
 public class securi_sensor extends AppCompatActivity {
-    Button addNfc, delNfc, conCam, conSensor;
-    TextView nfcNum, nfcDate;
+    LinearLayout conCam_extend, conSensor_extend;
+    Button addNfc, delNfc;
+    TextView nfcNum, nfcDate, conCam, conSensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

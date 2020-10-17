@@ -14,26 +14,49 @@ import androidx.annotation.Nullable;
 
 import com.example.securi.listView.ListViewAdapter;
 import com.example.securi.R;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class Menu4Fragment extends ListFragment{
-ListViewAdapter adapter;
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class Menu4Fragment extends ListFragment {
+    ListViewAdapter adapter;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mReference;
+    private ChildEventListener mChild;
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Adapter 생성 및 Adapter 지정.
         adapter = new ListViewAdapter();
         setListAdapter(adapter);
+        mDatabase = FirebaseDatabase.getInstance();
+        mReference = mDatabase.getReference("Test/Push/Timestamp");
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                SimpleDateFormat fmt = new SimpleDateFormat("MMM dd yyyy HH:mm:ss a", Locale.getDefault());
+                for (DataSnapshot messageData : dataSnapshot.getChildren()) {
+                    // child 내에 있는 데이터만큼 반복합니다.
+                    long timeStamp = messageData.getValue(Long.class);
+                    Date date = new Date(timeStamp);
+                    String msg = fmt.format(date);
+                    adapter.addItem(msg);
+                }
+                adapter.notifyDataSetChanged();
 
-        //추후 파이어베이스에서 가져올 수 있게 구현해야함
-        //adapter.addItem("08/20","출입","17시 20분 33초", R.mipmap.camera);
-        //adapter.addItem("08/20","외출","17시 20분 50초",R.mipmap.camera);
-        //adapter.addItem("08/20","출입","17시 20분 33초",R.mipmap.camera);
-        //View view = inflater.inflate(R.layout.securi_entryhistory, container, false);
+            }
+            public void onCancelled(DatabaseError databaseError) {
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+            }
+        });
+            return super.onCreateView(inflater, container, savedInstanceState);
+        }
     }
-    public void onListItemClick(ListView l, View v, int position,  long id){
-
-       }
-    }
-

@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         manager = getSupportFragmentManager();
-        frag = (Menu3Fragment)manager.findFragmentById(R.id.joinState);
-        frag2 = (Menu3Fragment)manager.findFragmentById(R.id.btnlogin);
+        //frag = (Menu3Fragment)manager.findFragmentById(R.id.joinState);
+        //frag2 = (Menu3Fragment)manager.findFragmentById(R.id.btnlogin);
 
         //앱 로딩화면 띄우기
         Intent intent = new Intent(this, LoadingActivity.class);
@@ -88,13 +88,5 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-//    public void mOnclick(View view){
-//        switch (view.getId()){
-//            case R.id.btnlogin:
-//                //TextView joinState = (TextView)frag.getView().findViewById(R.id.joinState);
-//                frag.setTextViewValue(R.string.email+"님 환영합니다 !");
-//                break;
-//        }
-//    }
     }
 }

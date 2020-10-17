@@ -3,83 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:background="#ECEBEB"
     android:gravity="center_horizontal">
 
-    <LinearLayout
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/popup_border"
-        android:layout_gravity = "center"
-        >
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="27 Mon"
-            android:textColor="#ffffff"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/border"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:layout_marginLeft="15dp">
+        android:id="@+id/calDate"
+        android:textSize="15dp"
+        android:padding="10dp"/>
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:padding="5dp">
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_gravity = "center"
-                >
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="08시 23분 23초"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity = "center">
-
-                <TextView
-                    android:id="@+id/content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="18시 24분 33초"
-                    android:layout_gravity = "center"
-                    android:textColor="#000"
-                    android:textSize="20dp" />
-            </TableRow>
-        </TableLayout>
-
-        <ImageView
-            android:id="@+id/entryData"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity = "center"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_marginLeft="40dp"/>
-    </LinearLayout>
 </LinearLayout>
-

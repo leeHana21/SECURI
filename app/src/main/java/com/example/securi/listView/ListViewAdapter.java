@@ -1,6 +1,7 @@
 package com.example.securi.listView;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,71 +12,50 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.securi.R;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ListViewAdapter extends BaseAdapter {
-    // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>();
 
-    // ListViewAdapter의 생성자
-    public ListViewAdapter() {
+    public ListViewAdapter(){
 
     }
-
-    // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
-    @Override
-    public int getCount() {
+    public int getCount(){
         return listViewItemList.size();
     }
 
-    // position에 위치한 데이터를 화면에 출력하는데 사용될 View를 리턴. : 필수 구현
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position,View convertView,ViewGroup parent) {
         final int pos = position;
         final Context context = parent.getContext();
 
-        // "listview_item" Layout을 inflate하여 convertView 참조 획득.
         if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.securi_entryhistory_listview, parent, false);
         }
-        TextView date = (TextView) convertView.findViewById(R.id.date);
-        TextView title = (TextView) convertView.findViewById(R.id.title);
-        TextView content = (TextView) convertView.findViewById(R.id.content);
-        ImageView entryData = (ImageView) convertView.findViewById(R.id.entryData);
-
+        TextView calDate = (TextView) convertView.findViewById(R.id.calDate);
         ListViewItem listViewItem = listViewItemList.get(position);
-        date.setText(listViewItem.getDate());
-        title.setText(listViewItem.getTitle());
-        content.setText(listViewItem.getContent());
-        entryData.setImageResource(listViewItem.getEntryData());
-
+        calDate.setText(listViewItem.getCalDate());
         return convertView;
     }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
-    @Override
-    public Object getItem(int position) {
+        public long getItemId(int position){
+            return position;
+        }
+        public Object getItem(int position){
         return listViewItemList.get(position);
     }
-
-    public void addItem(String date, String title, String content, int entryData) {
+    public void addItem(String date){
         ListViewItem item = new ListViewItem();
-
-        item.setDate(date);
-        item.setTitle(title);
-        item.setContent(content);
-        item.setEntryData(entryData);
-
+        item.setCalDate(date);
         listViewItemList.add(item);
     }
 }
