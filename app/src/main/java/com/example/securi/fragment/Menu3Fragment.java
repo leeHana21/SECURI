@@ -60,8 +60,9 @@ public class Menu3Fragment extends Fragment implements View.OnClickListener {
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot messsageData : dataSnapshot.getChildren()){
-                    if(dataSnapshot.getChildren().equals(messsageData)){
+                String state = "on";
+                String value = dataSnapshot.getValue(String.class);
+                    if(value.equals(state)){
                         doorState.setText("잠금 ON");
                         doorState.setTextColor(Color.BLUE);
 
@@ -70,7 +71,6 @@ public class Menu3Fragment extends Fragment implements View.OnClickListener {
                         doorState.setTextColor(Color.RED);
                     }
                 }
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -81,8 +81,9 @@ public class Menu3Fragment extends Fragment implements View.OnClickListener {
         mReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot messsageData : dataSnapshot.getChildren()) {
-                    if (dataSnapshot.getChildren().equals(messsageData)) {
+                String state = "on";
+                String value = dataSnapshot.getValue(String.class);
+                    if (value.equals(state)) {
                         camState.setText("ON");
                         camState.setTextColor(Color.BLUE);
                     } else {
@@ -90,19 +91,20 @@ public class Menu3Fragment extends Fragment implements View.OnClickListener {
                         camState.setTextColor(Color.RED);
                     }
                 }
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-        mReference3 = mDatabase.getReference("lock");
+
+        mReference3 = mDatabase.getReference("sensor");
         mReference3.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot messsageData : dataSnapshot.getChildren()) {
-                    if (dataSnapshot.getChildren().equals(messsageData)) {
+                String state = "on";
+                String value = dataSnapshot.getValue(String.class);
+                    if (value.equals(state)) {
                         sensorState.setText("ON");
                         sensorState.setTextColor(Color.BLUE);
 
@@ -111,8 +113,6 @@ public class Menu3Fragment extends Fragment implements View.OnClickListener {
                         sensorState.setTextColor(Color.RED);
                     }
                 }
-            }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 

@@ -3,12 +3,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorP"
+    android:background="@color/colorAccent"
     android:gravity="center">
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/securilogo"
+        android:src="@mipmap/logo6"
         android:layout_marginBottom="10dp"
         android:layout_gravity="center"/>
     <TextView
@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:text="securi"
         android:textStyle="bold|italic"
-        android:textColor="#ffffff"
+        android:textColor="#308ffb"
         android:textSize="35dp"/>
 </LinearLayout>

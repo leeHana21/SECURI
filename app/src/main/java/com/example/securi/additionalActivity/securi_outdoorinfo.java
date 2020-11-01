@@ -17,7 +17,6 @@ public class securi_outdoorinfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.securi_outdoorinfo);
         web = findViewById(R.id.web);
-        settings.setUseWideViewPort(true);
         web.setWebViewClient(new WebViewClient());
         web.loadUrl("http://192.168.43.121:81/stream");
     }

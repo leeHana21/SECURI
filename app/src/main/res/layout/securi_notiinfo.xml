@@ -59,6 +59,7 @@
         </LinearLayout>
     </LinearLayout>
     <TextView
+        android:id="@+id/insert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="업데이트 히스토리"

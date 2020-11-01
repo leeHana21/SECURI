@@ -38,11 +38,11 @@ public class Menu4Fragment extends ListFragment {
         adapter = new ListViewAdapter();
         setListAdapter(adapter);
         mDatabase = FirebaseDatabase.getInstance();
-        mReference = mDatabase.getReference("Test/Push/Timestamp");
+        mReference = mDatabase.getReference("open/Push");
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                SimpleDateFormat fmt = new SimpleDateFormat("MMM dd yyyy HH:mm:ss a", Locale.getDefault());
+                SimpleDateFormat fmt = new SimpleDateFormat("MMM dd일 yyyy HH:mm:ss a", Locale.getDefault());
                 for (DataSnapshot messageData : dataSnapshot.getChildren()) {
                     // child 내에 있는 데이터만큼 반복합니다.
                     long timeStamp = messageData.getValue(Long.class);

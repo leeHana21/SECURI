@@ -30,6 +30,7 @@ public class Menu2Fragment extends Fragment implements View.OnClickListener{
     TextView doorStateTxt,lockState,serverState, checkHistory, doorOpen;
     LinearLayout checkHistory_extend, doorOpen_extend;
     private FirebaseDatabase mDatabase;
+    private DatabaseReference mDatabase2;
     private DatabaseReference mReference;
     private DatabaseReference mReference2;
     private DatabaseReference mReference3;
@@ -49,14 +50,13 @@ public class Menu2Fragment extends Fragment implements View.OnClickListener{
         doorOpen_extend.setOnClickListener(this);
         checkHistory.setOnClickListener(this);
 
-        mDatabase = FirebaseDatabase.getInstance();
-        mReference = mDatabase.getReference().child("lock");
-        mReference.addValueEventListener(new ValueEventListener() {
+        mDatabase2 = FirebaseDatabase.getInstance().getReference("lock");
+        mDatabase2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String state = "on";
-                for (DataSnapshot messageData : dataSnapshot.getChildren()) {
-                    if (messageData.equals(state)) {
+                String value = dataSnapshot.getValue(String.class);
+                    if (value.equals(state)) {
                         doorStateTxt.setText("출입문 잠금 중");
                         doorStateTxt.setTextColor(Color.BLUE);
                         lockState.setText("잠금장치\n작동 중");
@@ -66,8 +66,30 @@ public class Menu2Fragment extends Fragment implements View.OnClickListener{
                         doorStateTxt.setTextColor(Color.RED);
                         lockState.setText("잠금장치\n작동 중지");
                         lockState.setTextColor(Color.RED);
-
                     }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        mDatabase2 = FirebaseDatabase.getInstance().getReference("lock");
+        mDatabase2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String state = "on";
+                String value = dataSnapshot.getValue(String.class);
+                if (value.equals(state)) {
+                    doorStateTxt.setText("출입문 잠금 중");
+                    doorStateTxt.setTextColor(Color.BLUE);
+                    lockState.setText("잠금장치\n작동 중");
+                    lockState.setTextColor(Color.BLUE);
+
+                } else {
+                    doorStateTxt.setText("출입문 잠금 해제");
+                    doorStateTxt.setTextColor(Color.RED);
+                    lockState.setText("잠금장치\n작동 중지");
+                    lockState.setTextColor(Color.RED);
                 }
             }
             @Override
@@ -76,6 +98,27 @@ public class Menu2Fragment extends Fragment implements View.OnClickListener{
             }
         });
 
+
+        mDatabase2 = FirebaseDatabase.getInstance().getReference("server");
+        mDatabase2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String state = "on";
+                String value = dataSnapshot.getValue(String.class);
+                if (value.equals(state)) {
+                    serverState.setText("서버 상태\n정상");
+                    serverState.setTextColor(Color.BLUE);
+
+                } else {
+                    serverState.setText("서버 상태\n불안정");
+                    serverState.setTextColor(Color.RED);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         return view;
     }
 

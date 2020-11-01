@@ -198,11 +198,10 @@ public class ListViewAdapter_datainfo extends BaseAdapter {
             }
             
         });
-        builder.setPositiveButton("저장", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (dialog!=null){
-                    Toast.makeText(context, "저장되었습니다", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                 }
             }

@@ -18,12 +18,16 @@
         android:id="@+id/doorStateTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:text="출입문 잠금 중"
         android:textSize="30dp"
         android:textColor="#828282"
-        android:textStyle="bold"
-        android:paddingBottom="10dp"/>
+        android:textStyle="bold" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_marginBottom="15dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"

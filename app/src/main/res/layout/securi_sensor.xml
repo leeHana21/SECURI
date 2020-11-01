@@ -29,11 +29,12 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/border"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
@@ -71,31 +72,7 @@
                     android:textSize="20dp" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="등록 날짜"
-                    android:textColor="#308FFB"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/nfcDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="2020-03-27"
-                    android:textSize="20dp" />
-            </TableRow>
         </TableLayout>
     </LinearLayout>
 
@@ -111,7 +88,7 @@
             android:layout_height="60dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@color/colorS"
+            android:background="#C9C7C7"
             android:text="추가등록"
             android:textSize="20dp"
             android:textColor="#ffffff"
@@ -124,7 +101,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="5dp"
             android:textSize="20dp"
-            android:background="@color/colorS"
+            android:background="#C9C7C7"
             android:text="등록해지"
             android:textColor="#ffffff"
             android:textStyle="bold" />
@@ -181,15 +158,13 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp"/>
 
-            <TextView
+            <Switch
                 android:id="@+id/conSensor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="끄 기"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:thumbTint="@color/colorS" />
         </LinearLayout>
 
         <LinearLayout
@@ -219,15 +194,13 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <TextView
+            <Switch
                 android:id="@+id/conCam"
-                android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="끄 기"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:thumbTint="@color/colorS" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
